@@ -1,0 +1,81 @@
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-family: 'Noto Sans', Arial, sans-serif;
+	font-weight: 700;
+
+	a {
+		color: $black;
+	}
+}
+
+h1  {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+
+.site-title {
+	font-size: 3em;
+	font-weight: 700;
+	font-family: 'Noto Sans', Arial, sans-serif;
+	clear: both;
+	text-transform: uppercase;
+	margin: 0;
+	display: flex;
+	
+	a {
+		flex: 1;
+		border: none;
+
+		&:hover {
+			border: none;
+		}
+
+		&:after {
+			content: none;
+		}
+
+		svg {
+			max-width: 100%;
+			max-height: 3em;
+
+			.primary-color {
+				fill: $primary;
+			}
+		}
+	}
+}
+
+
+.site-description {
+	text-transform: uppercase;
+	max-width: 20em;
+	text-align: center;
+}
+
+.page-title {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+

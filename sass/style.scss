@@ -1,0 +1,381 @@
+/*!
+Theme Name: BWPP
+Theme URI: http://underscores.me/
+Author: daronspence
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: bwpp
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+BWPP is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+
+$black : #556270;
+
+$white : lighten( $black, 61% );
+
+$primary : #C44D58;
+
+$primary--accent : #FF6B6B;
+
+$secondary : #70EE9C;
+
+$tertiary : #4ECDC4;
+
+
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "sanitize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+body {
+	background: lighten( $black, 58% );
+	color: $black;
+	font-family: 'Merriweather Sans', 'Helvetica', Arial, sans-serif;
+	font-weight: 300;
+}
+
+body * + * {
+	margin-top: 1em;
+}
+
+#wpadminbar {
+	margin-top: 0;
+	a:after {
+		content: none;
+	}
+}
+
+#page {
+	margin-bottom: 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+.fa-heart {
+	color: $primary--accent;
+}
+
+.give-padding {
+	padding: 0 1em;
+
+	@media screen and (min-width: 680px){
+		padding: 0 2em;
+	}
+
+	@media screen and (min-width: 960px){
+		padding: 0;
+	}
+}
+
+.centered {
+	text-align: center;
+}
+
+.container {
+	max-width: 40em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+blockquote {
+	position: relative;
+	padding: 2em;
+	font-size: 1.25em;
+	border-left: 4px solid rgba( $primary, .5 );
+
+	&:before {
+		content: '\f10e';
+		font-size: 2em;
+		font-family: "FontAwesome";
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: rgba( $primary, .5 );
+	}
+}
+
+code {
+	color: $primary;
+	background: lighten( $black, 58% );
+	padding: .1em .5em;
+	font-size: 90%;
+	display: inline-block;
+	border-radius: 5px;
+}
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+// @import "navigation/navigation";
+
+a {
+	color: $primary;
+	position: relative;
+
+	&:hover {
+		// border-bottom: 1px solid;
+
+		&:after {
+			width: 100%;
+		}
+	}
+	&:after {
+		content: '';
+		width: 0;
+		height: 2px;
+		background: currentColor;
+		transition: all 100ms linear;
+		position: absolute;
+		bottom: -3px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+#primary-menu {
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin: 0;
+		padding: .5em;
+
+		a {
+			padding: .5em 1em;
+			display: inline-block;
+			vertical-align: middle;
+			background: lighten( $black, 52% );
+			text-transform: uppercase;
+			color: $black;
+			font-family: 'Noto Sans', Arial, sans-serif;
+			font-weight: 700;
+			border: none;
+			transition: all 100ms linear;
+
+			&:after {
+				content: none;
+			}
+
+			&:hover {
+				background: $primary;
+				color: $white;
+				border: none;
+			}
+		}
+	}
+}
+
+a {
+	// color: $tertiary;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+// @import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+// @import "site/site";
+
+#masthead {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+
+	@media screen and (min-width: 500px){
+		flex-direction: row;
+
+		#primary-menu {
+			text-align: right;
+		}
+
+	}
+
+	#site-navigation {
+		margin-top: 0;
+	}
+}
+
+.hentry {
+	max-width: 40em;
+	background: $white;
+	margin: 0 auto;
+	padding: 2em;
+}
+
+.site-info {
+	text-align: center;
+}
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+// @import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+#breadcrumbs {
+	margin-bottom: 1em;
+}
+
+
+.edit-link {
+	display: block;
+}
+
+#main > .page-builder {
+	// margin-top: 1em;
+}
+
+.mejs-controls a.mejs-horizontal-volume-slider, .mejs-time-loaded, .mejs-time-current {
+	margin-top: 0;
+}
+
+
+.page-builder {
+
+	.layout {
+		padding-top: 4em;
+		padding-bottom: 4em;
+		margin: 0;
+	}
+
+	.layout-section-title {
+		font-size: 1.5em;
+		font-family: 'Noto Sans', Arial, sans-serif;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.cta-title {
+		font-size: 2em;
+		text-align: center;
+		font-weight: 700;
+		font-family: 'Noto Sans', Arial, sans-serif;
+	}
+	.cta-subtitle {
+		font-size: 1.25em;
+		text-align: center;
+	}
+
+	.layout-podcast {
+
+		.episode-title {
+			font-size: 1.25em;
+		}
+	}
+}
+
+.home .page-builder {
+	.layout:nth-child(odd) {
+		background-color: $primary;
+		color: $white;
+
+		.button {
+			border-color: $white;
+			color: $white;
+			&:hover {
+				background: $white;
+				color: $primary;
+			}
+		}
+
+		a {
+			color: $secondary;
+		}
+	}
+}
+
+
+.author-overview {
+	padding: 1em;
+	background: $primary;
+	color: $white;
+
+	.author-name {
+		font-size: 1.25em;
+		margin: 0;
+		font-weight: 700;
+		font-family: 'Noto Sans', Arial, sans-serif;
+		text-transform: uppercase;
+	}
+
+	.avatar {
+		float: left;
+		margin-right: 1em;
+		border-radius: 50%;
+	}
+}

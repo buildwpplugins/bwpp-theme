@@ -1,0 +1,30 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"], .button {
+	border: 2px solid $primary;
+	padding: .5em 1em;
+	color: $primary;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: inline-block;
+	letter-spacing: 2px;
+	vertical-align: middle;
+	transition: all 100ms linear;
+
+	&:hover {
+		background: $primary;
+		color: $white;
+		cursor: pointer;
+	}
+
+	&:after {
+		content: none;
+	}
+
+	&:active,
+	&:focus {
+		background: $primary;
+		color: $white;
+	}
+}
